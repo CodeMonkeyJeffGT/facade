@@ -6,4 +6,7 @@
 #     `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 #     `account` VARCHAR(32) NOT NULL,
 # );
+#
+# # 2018-07-18 05:40
+# ALTER TABLE `user` ADD `password` VARCHAR(64) NOT NULL;
 
