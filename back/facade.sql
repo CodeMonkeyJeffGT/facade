@@ -10,57 +10,42 @@
 # # 2018-07-18 05:40
 # ALTER TABLE `user` ADD `password` VARCHAR(64) NOT NULL;
 
-/*权限表 权限号，权限名*/
-drop table if exists type;
-create table type (
-  type_no int(11) not null primary key,
-  role_name varchar(30) not null,
-) 
 
-/*职位表 职位号，职位名*/
-drop table if exists job_info;
-create table job_info (
-  id int(11) not null primary key,
-  job_name varchar(20) not null,
-)
+##2018-7-21 13:38 sql2.0
 
-/*用户表 用户信息*/
-drop table if exists user;
-create table user(
-  type_no int(11) not null,
-  work_id int(18) not null primary key,
-  job_id  int(11)  not null,
-  name varchar(20) not null,
-  telphone varchar(11) not null,
-  email varchar(30) not null,
-  password varchar(255) not null
-) 
+#用户信息表
+ CREATE TABLE `user` (
+  `id` int(10) NOT NULL auto_increment,
+  `role_id` int(11) NOT NULL, # 0代表普通用户 1代表管理员
+  `account` int(18) NOT NULL,
+  `job_id` int(11) NOT NULL,   # 1代表后台工程师 2代表产品经理 3前端开发工程师
+  `name` varchar(20) NOT NULL,
+  `telphone` varchar(11) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8        
 
-insert into type  values (0, 'normal_user');
-insert into type  values (1, 'admin');
+insert into user values(null,'1','2016214356', '1','杜雨霖','15663771301','787999749@qq.com','123456');
+insert into user values(null,'1','2016224414','1','赵桐','15663601130','531784003@qq.com','123456');                                                                                                       
 
-insert into job_info values ('1', '后台开发工程师');
-insert into job_info values ('2', '产品运维师');
-insert into job_info values ('3', '前端开发工程师');
+#项目表                                                                              
+ CREATE TABLE `project` (
+  `pno` int(11) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `content` varchar(100) NOT NULL,
+  `photo` varchar(255) NOT NULL,  #图片路径
+  PRIMARY KEY  (`pno`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 
 
-insert into user values('1','2016214356', '1','杜雨霖','15663771301','787999749@qq.com','123456');
-insert into user values('1','2016224414','1','赵桐','15663601130','531784003@qq.com','123456');
+INSERT into project VALUES (1,'知派',' ',' ');
 
-/*项目表*/
-drop table if exists project;
-create table project(
-project_no int(11) not null primary key,
-project_name varchar(20) not null,
-project_content varchar(100) not null
-)
+#项目成员表
+ CREATE TABLE `member` (
+  `pno` int(10) NOT NULL,
+  `id` int(10) NOT NULL,   #项目成员号
+  `duty` varchar(20) NOT NULL,
+  PRIMARY KEY  (`id`,`pno`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
 
-/*项目成员*/
-create table project_member(
-project_no int(11) not null,
-position int(11) not null,
-work_id int(18) not null,
-primary key (work_id,project_no),
-foreign key (project_no) references project(project_no),
-foreign key (position) references job_info(id),
-foreign key (work_id) references user(work_id)
-)
+INSERT into member VALUES (1,20154321,'后台');
