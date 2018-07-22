@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>应用软件研究所</title>
+</head>
+<style>
+.button
+{
+	background-color:#FF4500;
+	color:#FFFFFF;
+	border: none;
+	border-radius:8px;
+	font-size:18px;
+	font-family:"微软雅黑";
+	padding: 5px 10px;
+}
+.button1
+{
+	background-color:white;
+	color:#000000;
+	border: 2px solid #FF4500;
+}
+.button1:hover 
+{
+    background-color: #FF4500;
+    color: white;
+}
+</style>
+<body>
+<br><br><br><br><br>
+<form action="loginservlet" method="post">
+<table align="center">
+<tr><td height=90px align="center" colspan=2><h2>欢迎登录</h2></td></tr>
+<tr><td height=70px align="right">请输入用户名：</td><td align="left"><input type="text" name="user"></td></tr>
+<tr><td height=70px align="right">请输入密码：</td><td align="left"><input type="password" name="ps"></td></tr>
+<tr><td height=90px align="center" colspan=2><input class="button button1" type="submit" value="登录"></td></tr>
+</table>
+</form>
+</body>
+<html>
