@@ -43,8 +43,6 @@ class UserController extends Controller
 			echo "注册失败";
 			//ajaxReturn(0,"注册失败");
 		}
-
-		
 	}
 	public function changeinfo()
 	{
