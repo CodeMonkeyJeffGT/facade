@@ -44,7 +44,7 @@ class UserController extends Controller
 			//ajaxReturn(0,"注册失败");
 		}
 
-		
+		//ajaxReturn(0,"注册失败");
 	}
 	public function changeinfo()
 	{
@@ -77,7 +77,13 @@ class UserController extends Controller
 			echo "修改密码失败";
 			//ajaxReturn(1,"修改信息失败");
 		}
-
+	}
+	public function showperson()
+	{
+		$user=D('User');
+		$data=$user->showper();
+		print_r($data);
+		return $data;
 	} 
 }
 ?>

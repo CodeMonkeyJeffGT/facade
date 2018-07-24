@@ -78,5 +78,14 @@ class UserModel extends Model
 			return false;
 		}
 	}
+	public function showper()
+		{	
+			$sql = '
+			SELECT `name`, `telphone`,`job_name`,`email`
+			FROM `user`,`job`
+			where job.`id` = user.`job_id`';
+			$showper=$this->query($sql);
+			return  $showper;
+		}
 }
 ?>

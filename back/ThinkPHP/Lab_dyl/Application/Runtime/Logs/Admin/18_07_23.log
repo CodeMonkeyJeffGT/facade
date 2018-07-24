@@ -2288,3 +2288,95 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000448s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000466s ]
 
+[ 2018-07-23T20:43:17+08:00 ] 127.0.0.1 /Admin/User/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000453s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000456s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000483s ]
+NOTIC: [2] Declaration of Admin\Model\UserModel::check($account) should be compatible with Think\Model::check($value, $rule, $type = 'regex') F:\XAMPP\htdocs\dyl\ThinkPHP\Lab_dyl\Application\Admin\Model\UserModel.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0130s ]
+SQL: select * from user where account=2015 [ RunTime:0.0070s ]
+SQL: INSERT INTO `user` (`account`,`password`,`role`,`job_id`,`telphone`,`email`,`name`) VALUES ('2015','81dc9bdb52d04dc20036dbd8313ed055','0','0',' ',' ',' ') [ RunTime:0.0029s ]
+SQL: select id from user where account=2015 [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' F:\XAMPP\htdocs\dyl\ThinkPHP\Lab_dyl\Application\Admin\Model\UserModel.class.php 第 42 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000617s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000638s ]
+
+[ 2018-07-23T20:43:28+08:00 ] 127.0.0.1 /Admin/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000286s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000335s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000356s ]
+NOTIC: [2] Declaration of Admin\Model\UserModel::check($account) should be compatible with Think\Model::check($value, $rule, $type = 'regex') F:\XAMPP\htdocs\dyl\ThinkPHP\Lab_dyl\Application\Admin\Model\UserModel.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0210s ]
+SQL: select id,password from user where account=2015 [ RunTime:0.0075s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000423s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000444s ]
+
+[ 2018-07-23T20:43:37+08:00 ] 127.0.0.1 /Admin/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000373s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000446s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000476s ]
+NOTIC: [2] Declaration of Admin\Model\UserModel::check($account) should be compatible with Think\Model::check($value, $rule, $type = 'regex') F:\XAMPP\htdocs\dyl\ThinkPHP\Lab_dyl\Application\Admin\Model\UserModel.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0092s ]
+SQL: select id,password from user where account=2015 [ RunTime:0.0108s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000758s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000791s ]
+
+[ 2018-07-23T20:43:44+08:00 ] 127.0.0.1 /Admin/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000376s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000434s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000495s ]
+NOTIC: [2] Declaration of Admin\Model\UserModel::check($account) should be compatible with Think\Model::check($value, $rule, $type = 'regex') F:\XAMPP\htdocs\dyl\ThinkPHP\Lab_dyl\Application\Admin\Model\UserModel.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0220s ]
+SQL: select id,password from user where account=2015 [ RunTime:0.0084s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' F:\XAMPP\htdocs\dyl\ThinkPHP\Lab_dyl\Application\Admin\Model\UserModel.class.php 第 13 行.
+NOTIC: [8] Use of undefined constant ture - assumed 'ture' F:\XAMPP\htdocs\dyl\ThinkPHP\Lab_dyl\Application\Admin\Model\UserModel.class.php 第 14 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000455s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000478s ]
+
+[ 2018-07-23T20:46:21+08:00 ] 127.0.0.1 /Admin/User/register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000310s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000476s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000501s ]
+NOTIC: [2] Declaration of Admin\Model\UserModel::check($account) should be compatible with Think\Model::check($value, $rule, $type = 'regex') F:\XAMPP\htdocs\dyl\ThinkPHP\Lab_dyl\Application\Admin\Model\UserModel.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0126s ]
+SQL: select * from user where account=2016 [ RunTime:0.0129s ]
+SQL: INSERT INTO `user` (`account`,`password`,`role`,`job_id`,`telphone`,`email`,`name`) VALUES ('2016','81dc9bdb52d04dc20036dbd8313ed055','0','0',' ',' ',' ') [ RunTime:0.0024s ]
+SQL: select id from user where account=2016 [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' F:\XAMPP\htdocs\dyl\ThinkPHP\Lab_dyl\Application\Admin\Model\UserModel.class.php 第 42 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000794s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000825s ]
+
+[ 2018-07-23T20:46:53+08:00 ] 127.0.0.1 /Admin/User/changeinfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000331s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000351s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000374s ]
+NOTIC: [2] Declaration of Admin\Model\UserModel::check($account) should be compatible with Think\Model::check($value, $rule, $type = 'regex') F:\XAMPP\htdocs\dyl\ThinkPHP\Lab_dyl\Application\Admin\Model\UserModel.class.php 第 4 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0161s ]
+SQL: UPDATE `user` SET `job_id`='3',`name`='test5',`telphone`='13735684841',`email`='14464858411@nefu.edu' WHERE `id` = 10 [ RunTime:0.0217s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001328s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001394s ]
+
