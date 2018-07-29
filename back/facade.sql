@@ -49,3 +49,53 @@ INSERT into project VALUES (1,'知派',' ',' ');
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 
 INSERT into member VALUES (1,20154321,'后台');
+
+#2018年7月25日22:06:36
+CREATE TABLE `user` (
+  `id` int(10) NOT NULL auto_increment,
+  `role` int(11) NOT NULL COMMENT '0代表普通用户，1代表管理员',
+  `account` int(18) NOT NULL,
+  `job_id` int(11) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `telphone` varchar(11) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY  (`id`),
+  KEY `index_acc` (`account`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+CREATE TABLE `project` (
+  `id` int(10) NOT NULL auto_increment,
+  `pno` int(11) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `content` varchar(100) NOT NULL,
+  `photo` varchar(255) NOT NULL,
+  PRIMARY KEY  (`id`),
+  KEY `index_pno` USING BTREE (`pno`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+CREATE TABLE `member` (
+  `id` int(10) NOT NULL auto_increment,
+  `pno` int(10) NOT NULL,
+  `u_id` int(10) NOT NULL COMMENT '项目成员号',
+  `duty` varchar(20) NOT NULL,
+  PRIMARY KEY  (`id`),
+  KEY `pno_index` USING BTREE (`pno`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+CREATE TABLE `job` (
+  `id` int(11) NOT NULL,
+  `job_name` varchar(20) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='职位表；\r\n职位'
+
+CREATE TABLE `file` (
+  `id` int(10) NOT NULL auto_increment,
+  `name` varchar(200) NOT NULL,
+  `url` varchar(100) NOT NULL,
+  `time` varchar(20) NOT NULL,
+  `f_id` int(20) default NULL,
+  PRIMARY KEY  (`id`),
+  KEY `index_id` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
