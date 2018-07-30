@@ -42,7 +42,7 @@ class BackController extends ApiController {
 		}
 		else 
 		{
-			$this->apiReturn($this->user->getError(), false);
+			$this->apiReturn($project->getError(), false);
 		}
 	}
 	public function changepro()
@@ -60,7 +60,7 @@ class BackController extends ApiController {
 		}
 		else 
 		{
-			$this->apiReturn($this->user->getError(), false);
+			$this->apiReturn($project->getError(), false);
 		}
 	}
 	public function delpro()
@@ -73,7 +73,7 @@ class BackController extends ApiController {
 		}
 		else 
 		{
-			$this->apiReturn($this->user->getError(), false);
+			$this->apiReturn($project->getError(), false);
 		}
 	}
 }

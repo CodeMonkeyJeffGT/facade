@@ -3,6 +3,7 @@ namespace Admin\Model;
 use Think\Model;
 class ProjectModel extends Model
 {	
+	private $errmsg;
 	protected $tablename='project';
 	public function list()
 	{	
@@ -35,5 +36,68 @@ class ProjectModel extends Model
 		$member=$this->query($sql,$pno);
 		return  $member;
 	}
-}
+	public function add_pro($pno,$name,$photo,$content,$member,$duty,$id)
+	{
+		$data['pno']=$pno;
+		$data['name'] = $name;
+		$data['photo'] = $photo;
+		$data['content'] = $content;
+		$id=session('id');
+		$check='select  role from user where id ='.$id;
+		if($check[0][role]==1)
+	    {	
+			if($this->save($data))
+			{
+				return true;
+			}else
+			{
+				$this->errmsg='添加项目失败';
+				return false;
+			} 
+		}else
+		{
+			$this->errmsg='抱歉，您不是管理员';
+	    	return false;
+		}
+
+	}	
+	public function del_pro($pno){
+		$id=session('id');
+		$check='select  role from user where id ='.$id;
+	    $check=$this->query($check);
+	    if($check[0][role]==1)
+	    {	
+			$sql='select pno from project where pno ='.$pno;
+			$data=$this->query($sql);
+			if($data)
+			{
+				$sql='delete  from project where pno ='.$pno;	
+				$sql2='delete  from member where pno ='.$pno;
+				if( ($this->execute($sql))&&($this->execute($sql2)))
+				{
+					return true;
+				}else
+				{
+				$this->errmsg='删除项目失败';
+				return false;
+				}	 
+			}
+			else
+			{
+				$this->errmsg='该项目不存在,请重新输入';
+				return false;
+			}
+	    }
+	  	else 
+	    {	
+	    	$this->errmsg='抱歉，您不是管理员';
+	    	return false;
+	    }	
+	}	
+	public function getError()
+	{
+		return $this->errmsg;
+	}
+
+	}
 ?>
