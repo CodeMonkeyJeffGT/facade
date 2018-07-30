@@ -63,34 +63,19 @@ function submitTest() {
     }
         return true;
 }
-$('#publish').on('click', function () {
-    console.log('test')
+$('#public').on('click',function() {
+    $.post("http:192.168.1.101/lab/index.php/Admin/User/login",
     {
-        $.ajax({  
-            type : "post",
-            url : " http://wish.jblog.info/v1/user/login",  
-            headers: {
-                Accept: "application/json; charset=utf-8"
-            },
-            xhrFields: {
-                withCredentials: true
-            },
-            crossDomain: true,
-            data: {
-                account: $('#account input').val(),
-                password: $('#password input').val()
-            },
-            success : function(data){
-                if(data.code == '1'){
-                    alert(data.message)
-                }else{
-                    window.location.href = 'index.html';
-                }
-            },  
-            error:function(){  
-                alert('fail');  
-            }  
-        });
-    }
+        account:$('#account').val(),
+        password:$('#password').val(),
+    },
     
-})
+    function(data,status){
+        if(data.code == '1'){
+            alert(data.message)
+        }else{
+            window.location.href = 'index.html';
+        }
+    
+    } ,"jsonp");
+    });
