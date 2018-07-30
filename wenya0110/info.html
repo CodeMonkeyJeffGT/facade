@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>应用软件研究所</title>
+    <link rel="stylesheet" type="text/css" href="./css/info.css">
+    <!--<script type="text/javascript" src="./js/info.js"></script>-->
+    <script type="text/javascript" src="./js/info.js"></script>
+</head>
+<body>
+    
+        <h1>个人信息</h1>
+     
+        <form action="info.html" method="post" name="form" onsubmit="return check(this)">
+           
+           <p>
+            <lable for="jobid">职   位：</label>
+            <input type="text" name="" id="jobid"></p>
+           <p>
+            <lable for="username">姓   名：</label>
+            <input type="text" name="" id="username"></p>   
+           <p>
+            <lable for="telphone">手   机：</label>
+            <input type="text" name="" id="telphone"></p>
+           <p>
+            <lable for="email">邮   箱：</label>
+            <input type="text" name="" id="email"> </p>
+           <p>
+           <input class="button button1" type="submit" value="提 交">
+           <input class="button button1" type="reset" value="清 空"></p>
+        </form>
+
+
+        <!--<script>
+                function check(){
+                　　var reg = new RegExp("^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$"); //正则表达式
+                　　var obj = document.getElementById("email"); //要验证的对象
+                　　if(obj.value === ""){ //输入不能为空
+                　　　　alert("输入不能为空!");
+                　　　　return false;
+                　　}else if(!reg.test(obj.value)){ //正则验证不通过，格式不对
+                　　　　alert("邮箱格式不正确");
+                　　　　return false;
+                　　}else{
+                　　　　//alert("通过！");
+                　　　　return true;
+                　　}
+                }
+        </script>-->
+
+</body>
+</html>

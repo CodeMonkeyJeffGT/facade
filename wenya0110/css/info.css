@@ -1,0 +1,16 @@
+button
+{
+	background-color:#FF4500;
+	color:#FFFFFF;
+	border: none;
+	border-radius:8px;
+	font-size:18px;
+	font-family:"????";
+	padding: 5px 10px;
+}
+.button1
+{
+	background-color:white;
+	color:#000000;
+	border: 2px solid #FF4500;
+}
