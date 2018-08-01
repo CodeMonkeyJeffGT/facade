@@ -25,42 +25,44 @@ class BackController extends ApiController {
 		}
 	}
 	public function addpro()
-	{
-		$pno=(int)I('post.pno','');
-		$name=I('post.name','');
-		$photo=I('post.photo','');  //应为上传图片地址
-		$content=I('post.content','');
-		$member=I('post.member','');
-		$duty=I('post.duty','');
-		$project=D('Project');
-		print_r($member);
-			die;
-		if($project->add_pro($pno,$name,$photo,$content,$member,$duty,$id))
+	{	
+		$arr=$this->get_content();
+		//print_r($arr);die;
+		$pno=$arr['pno'];
+		$name=$arr['name'];
+		$photo=$arr['photo'];  //应为上传fe片地址
+		$content=$arr['content'];
+		$member=$arr['member'];
+		//print_r($arr['member']);die;
+		$pro=D('Project');
+		//print_r($pno);die;
+		if($pro->add_pro($pno,$name,$photo,$content,$member))
 		{	
 
 			$this->apiReturn();
 		}
 		else 
 		{
-			$this->apiReturn($project->getError(), false);
+			$this->apiReturn($pro->getError(), false);
 		}
 	}
 	public function changepro()
 	{
-		$pno=(int)I('post.pno','');
-		$name=I('post.name','');
-		$photo=I('post.photo','');  //应为上传图片地址
-		$content=I('post.content','');
-		$member=I('post.member','');
-		$duty=I('post.duty','');
-		$project=D('Project');
-		if($project->change_pro($pno,$name,$photo,$content,$member,$duty,$id))
-		{
+		$arr=$this->get_content();
+		$pno=$arr['pno'];
+		$name=$arr['name'];
+		$photo=$arr['photo'];  //应为上传fe片地址
+		$content=$arr['content'];
+		$member=$arr['member'];
+		$pro=D('Project');
+		if($pro->change_pro($pno,$name,$photo,$content,$member))
+		{	
+
 			$this->apiReturn();
 		}
 		else 
 		{
-			$this->apiReturn($project->getError(), false);
+			$this->apiReturn($pro->getError(), false);
 		}
 	}
 	public function delpro()
