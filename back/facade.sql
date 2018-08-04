@@ -99,3 +99,12 @@ CREATE TABLE `file` (
   KEY `index_id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 
+#2018年8月4日23:54:30
+CREATE TABLE `record` (
+  `id` int(10) NOT NULL auto_increment,
+  `u_id` int(20) NOT NULL,
+  `content` varchar(200) NOT NULL,
+  `time` varchar(50) NOT NULL,
+  PRIMARY KEY  (`id`),
+  KEY `acc_index` (`u_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
